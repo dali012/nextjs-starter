@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Starter
 
-## Getting Started
+A modern, opinionated Next.js starter template packed with the latest
+technologies and best practices to kickstart your web development journey.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Library:** [React 19](https://react.dev/)
+- **Validation:** [Zod](https://zod.dev/)
+- **Environment:** [@t3-oss/env-nextjs](https://env.t3.gg/)
+- **Linting & Formatting:** ESLint, Prettier
+- **Git Hooks:** Husky, Lint-staged, Commitlint
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Bun](https://bun.sh/) (v1.0 or later)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd nextjs-starter
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   bun install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   bun dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see
+   the result.
+
+## 📂 Project Structure
+
+```text
+.
+├── src/
+│   ├── app/          # Next.js App Router pages and layouts
+│   ├── components/   # Reusable UI components
+│   ├── env/          # Environment variable validation
+│   └── ...
+├── public/           # Static assets
+├── .husky/           # Git hooks
+├── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📜 Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `bun dev`: Runs the development server.
+- `bun run build`: Builds the application for production.
+- `bun start`: Starts the production server.
+- `bun run lint`: Runs ESLint to check for code quality issues.
+- `bun run format`: Formats the code using Prettier.
+- `bun run prepare`: Sets up Husky git hooks.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Commit Convention
 
-## Learn More
+This project follows the
+[Conventional Commits](https://www.conventionalcommits.org/) specification.
 
-To learn more about Next.js, take a look at the following resources:
+Format: `<type>(<scope>): <subject>`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Types:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `feat`: A new feature
+- `fix`: A bug fix
+- `docs`: Documentation only changes
+- `style`: Changes that do not affect the meaning of the code (white-space,
+  formatting, etc)
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `perf`: A code change that improves performance
+- `test`: Adding missing tests or correcting existing tests
+- `chore`: Changes to the build process or auxiliary tools and libraries such as
+  documentation generation
 
-## Deploy on Vercel
+Example: `feat(auth): add login page`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses `@t3-oss/env-nextjs` for type-safe environment variables.
+Define your environment variables in `.env` (or `.env.local`) and validate them
+in `src/env/client.ts` and `src/env/server.ts`.

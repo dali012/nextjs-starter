@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
 import prettierConfig from 'eslint-config-prettier';
@@ -12,30 +11,34 @@ const eslintConfig = defineConfig([
   ...nextTs,
 
   {
-    plugins: { prettier: prettierPlugin, 'check-file': checkFilePlugin, n: nPlugin },
+    plugins: {
+      prettier: prettierPlugin,
+      'check-file': checkFilePlugin,
+      n: nPlugin,
+    },
     rules: {
       'prettier/prettier': 'error',
-      'quotes': ['error', 'single'],
-      'semi': ['error'],
-      "n/no-process-env": ["error"],
+      quotes: ['error', 'single'],
+      semi: ['error'],
+      'n/no-process-env': ['error'],
       'prefer-arrow-callback': ['error'],
       'prefer-template': ['error'],
-      "check-file/no-index": "error",
-      "check-file/filename-naming-convention": [
-        "error",
+      'check-file/no-index': 'error',
+      'check-file/filename-naming-convention': [
+        'error',
         {
-          "**/*.{ts,tsx}": "KEBAB_CASE"
+          '**/*.{ts,tsx}': 'KEBAB_CASE',
         },
         {
-          "ignoreMiddleExtensions": true
-        }
+          ignoreMiddleExtensions: true,
+        },
       ],
-      "check-file/folder-naming-convention": [
-        "error",
+      'check-file/folder-naming-convention': [
+        'error',
         {
-          "src/**/!^[.*": "KEBAB_CASE"
-        }
-      ]
+          'src/**/!^[.*': 'KEBAB_CASE',
+        },
+      ],
     },
   },
   prettierConfig,
