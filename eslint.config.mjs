@@ -1,21 +1,23 @@
 /* eslint-disable prettier/prettier */
-import { defineConfig, globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
-import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 import checkFilePlugin from 'eslint-plugin-check-file';
+import nPlugin from 'eslint-plugin-n';
+import prettierPlugin from 'eslint-plugin-prettier';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
 
   {
-    plugins: { prettier: prettierPlugin, 'check-file': checkFilePlugin },
+    plugins: { prettier: prettierPlugin, 'check-file': checkFilePlugin, n: nPlugin },
     rules: {
       'prettier/prettier': 'error',
       'quotes': ['error', 'single'],
       'semi': ['error'],
+      "n/no-process-env": ["error"],
       'prefer-arrow-callback': ['error'],
       'prefer-template': ['error'],
       "check-file/no-index": "error",
