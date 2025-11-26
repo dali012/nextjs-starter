@@ -14,7 +14,10 @@ const prettierConfig = {
   tabWidth: 2,
   trailingComma: 'all',
   useTabs: false,
-  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  plugins: [
+    '@trivago/prettier-plugin-sort-imports',
+    'prettier-plugin-tailwindcss',
+  ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   importOrder: [
